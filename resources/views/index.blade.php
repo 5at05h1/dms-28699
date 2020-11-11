@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-<title>TOP PAGE</title>
+<title>DMS online</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/index_sp.css">
 @endsection
