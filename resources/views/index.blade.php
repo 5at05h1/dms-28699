@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-<title>TOP PAGE</title>
+<title>DMS online</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/index_sp.css">
 @endsection
@@ -19,39 +19,19 @@
 <section class="itemModule section">
   <h1>PICKUP RECOMMEND</h1>
   <div class="itemList">
-    <div class="item">
-      <div class="image">
-        <a href="detail_1.html">
-          <img src="images/item/1.jpg" alt="商品名1">
-          <span class="link">くわしくみる</span>
-        </a>
+    @foreach ($items as $item)
+      <div class="item">
+        <div class="image">
+          <a href="/item/{{ $item->id }}">
+            <img src="{{ $item->picture01 }}" alt="{{ $item->name }}">
+            <span class="link">くわしくみる</span>
+          </a>
+        </div>
+        <div class="name"><a href="detail_1.html">{{ $item->name }}</a></div>
+        <div class="price">{{ number_format($item->price) }}</div>
+        <div class="favorite"><a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
       </div>
-      <div class="name"><a href="detail_1.html">こだわりのニット靴下</a></div>
-      <div class="price">390円</div>
-      <div class="favorite"><a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
-    </div>
-    <div class="item">
-      <div class="image">
-        <a href="detail_2.html">
-          <img src="images/item/2.jpg" alt="商品名2">
-          <span class="link">くわしくみる</span>
-        </a>
-      </div>
-      <div class="name"><a href="detail_2.html">ホーロー　カップ</a></div>
-      <div class="price">1,200円</div>
-      <div class="favorite"><a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
-    </div>
-    <div class="item">
-      <div class="image">
-        <a href="detail_3.html">
-          <img src="images/item/3.jpg" alt="商品名3">
-          <span class="link">くわしくみる</span>
-        </a>
-      </div>
-      <div class="name"><a href="detail_3.html">アメカジ　ネルシャツ</a></div>
-      <div class="price">1,980円</div>
-      <div class="favorite"><a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
-    </div>
+    @endforeach
   </div>
 </section>
 <section class="itemModule border-top section">
