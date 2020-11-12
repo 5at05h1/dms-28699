@@ -14,4 +14,12 @@ class ItemController extends Controller
             'items' => $items
         ]);
     }
+
+    public function view() {
+        $item = Item::findOrFail(1);
+
+        return view('item/item', [
+            'item' => $item
+        ]);
+    }
 }
