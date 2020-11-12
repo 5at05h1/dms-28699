@@ -14,10 +14,5 @@ use App\Models\Item;
 |
 */
 
-Route::get('/', function () {
-  $items = Item::orderBy('id', 'desc')->get();
-
-  return view('index', [
-      'items' => $items
-  ]);
-});
+Route::get('/', 'App\Http\Controllers\ItemController@index');
+Route::get('/item/{id}', 'App\Http\Controllers\ItemController@view');
