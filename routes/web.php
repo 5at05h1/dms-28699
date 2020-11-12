@@ -16,3 +16,6 @@ use App\Models\Item;
 
 Route::get('/', 'App\Http\Controllers\ItemController@index');
 Route::get('/item/{id}', 'App\Http\Controllers\ItemController@view');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
