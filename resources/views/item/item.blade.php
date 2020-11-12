@@ -2,8 +2,8 @@
 
 @section('header')
 <title>{{ $item->name }} - DMS online</title>
-<link rel="stylesheet" href="css/detail.css">
-<link rel="stylesheet" href="css/detail_sp.css">
+<link rel="stylesheet" href="/css/detail.css">
+<link rel="stylesheet" href="/css/detail_sp.css">
 @endsection
 
 @section('content')

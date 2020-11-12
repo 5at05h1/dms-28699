@@ -15,8 +15,8 @@ class ItemController extends Controller
         ]);
     }
 
-    public function view() {
-        $item = Item::findOrFail(2);
+    public function view($item_id) {
+        $item = Item::findOrFail($item_id);
 
         return view('item/item', [
             'item' => $item
