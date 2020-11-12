@@ -15,3 +15,4 @@ use App\Models\Item;
 */
 
 Route::get('/', 'App\Http\Controllers\ItemController@index');
+Route::get('/item/', 'App\Http\Controllers\ItemController@view');
