@@ -23,7 +23,7 @@
   <section class="itemImageModule">
     <div class="imageShow" id="imageShow">
       <div class="image">
-        <img src="images/item/1.jpg" alt="">
+        <img src="{{ $item->picture01 }}" alt="">
       </div>
       <div class="favorite">
         <a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a>
@@ -31,9 +31,9 @@
     </div>
     <div class="imageSelect" id="imageSelect">
       <ul>
-        <li><img src="images/item/1_2.jpg" alt=""></li>
-        <li><img src="images/item/1_3.jpg" alt=""></li>
-        <li><img src="images/item/1_4.jpg" alt=""></li>
+        <li><img src="{{ $item->picture01 }}" alt=""></li>
+        <li><img src="{{ $item->picture02 }}" alt=""></li>
+        <li><img src="{{ $item->picture03 }}" alt=""></li>
       </ul>      
     </div>
   </section>
@@ -44,21 +44,17 @@
   <!-- Mod: 説明モジュール -->
   <section class="itemInfoModule">
     <h1 class="name">{{ $item->name }}</h1>
-    <div class="price">税込<span>390</span>円</div>
+    <div class="price">税込<span>{{ number_format($item->price) }}</span>円</div>
     <ul class="tabNav" id="tabNav">
         <li class="select"><a href="#container_1">詳細文</a></li>
         <li><a href="#container_2">オススメの声</a></li>
     </ul>
     <div class="tabContainer" id="tabContainer">
       <div class="description textBlock container container_1 show">
-        <p>ふわっとしたニットをひとつずつ丁寧にハンドメイドで作りました。冬でも夏でもストレスなく着用できます。サイズはS・M・Lの3サイズ展開</p>
-        <p>素材：100%コットン　ハンドメイド</p>
+        <p>{!! nl2br($item->description) !!}</p>
       </div>
       <div class="recommend textBlock container container_2">
-        <p>あけみママ：30代主婦<br>
-        冷え性のため、肌に合う靴下を探していたところ、ぴったりでした！この靴下と出会って以来、肌がカサカサすることもなくなりました。</p>
-        <p>ゆっち：10代学生主<br>
-        学校にも履いていけるデザインでとても重宝しています。足首のしめつけも優しく、痕が残らないのもとても良かったです。</p>
+        <p>{!! nl2br($item->recommend) !!}</p>
       </div>
     </div>
   </section>
