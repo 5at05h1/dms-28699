@@ -28,6 +28,18 @@
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">MY PAGE</a></li>
         <li class="cart" id="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i><span id="cart_num">0</span></a></li>
+        <li>
+          @if (Auth::check())
+            <form action="/logout" method="post">
+              {{ csrf_field() }}
+              <button type="submit">LOGOUT</button>
+            </form>
+          @else
+            <form action="/login" method="get">
+              <button type="submit">LOGIN</button>
+            </form>
+          @endif
+        </li>
       </ul>
     </nav>
   </div>
