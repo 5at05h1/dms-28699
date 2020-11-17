@@ -16,6 +16,7 @@ use App\Models\Item;
 
 Route::get('/', 'App\Http\Controllers\ItemController@index');
 Route::get('/item/{id}', 'App\Http\Controllers\ItemController@view');
+Route::post('/item/{id}', 'App\Http\Controllers\CartController@add');
 
 Auth::routes();
 
