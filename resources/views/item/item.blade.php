@@ -62,15 +62,7 @@
 
   <!-- Mod: フォームモジュール -->
   <section class="formModule">
-    <form action="#" class="form">
-      <div class="sizeSelect">
-        <ul>
-          <li class="select"><a href="#">S</a></li>
-          <li class="empty"><a href="#">M</a></li>
-          <li><a href="#">L</a></li>
-        </ul>
-      </div>
-      <div class="alert hidden">ご指定のサイズは在庫切れです。サイズを選びなおしてください。</div>
+    <form action="" class="form"　method="post">
       <div class="unitSelect">
         <span>数量</span>
         <label>
@@ -84,7 +76,7 @@
         </label>
       </div>
       <div class="buttons">
-        <a href="#" class="button black" id="addCartButton">カートに入れる</a>
+        <button type="submit" class="button black" id="addCartButton">カートに入れる</button>
       </div>
     </form>
   </section>
