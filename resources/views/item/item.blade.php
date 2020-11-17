@@ -62,7 +62,7 @@
 
   <!-- Mod: フォームモジュール -->
   <section class="formModule">
-    <form action="" class="form"　method="post">
+    <form action="" class="form" method="post">
       {{ csrf_field() }}
       <div class="unitSelect">
         <span>数量</span>
