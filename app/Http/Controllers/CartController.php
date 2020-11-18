@@ -12,8 +12,15 @@ class CartController extends Controller
       if (Auth::check()) {
           $carts = Cart::getCartItems(Auth::id());
 
+          //合計金額
+          $sum = 0;
+          foreach ($carts as $cart) {
+              $sum += $cart->price * $cart->count;
+          }
+
           return view('cart/index', [
               'carts' => $carts,
+              'sum' => $sum,
           ]);
       } else {
           return redirect('/login');

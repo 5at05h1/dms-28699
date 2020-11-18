@@ -57,7 +57,7 @@
           </label>
         </td>
         <td class="price">
-          <span>{{ number_format($item->price) }}</span>円
+          <span>{{ number_format($item->price * $item->count) }}</span>円
         </td>
         <td class="action">
           <form action="" method="post">
@@ -76,7 +76,7 @@
   <section class="totalPriceModule section">
     <dl>
       <dt>ご注文価格合計</dt>
-      <dd><span id="totalPrice">2760</span>円</dd>
+      <dd><span id="totalPrice">{{ number_format($sum) }}</span>円</dd>
     </dl>
   </section>
 
