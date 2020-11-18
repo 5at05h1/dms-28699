@@ -45,15 +45,20 @@
         </td>
         <td class="unit">
           <label>
-            <select name="unit" id="">
-              @for ($i=1; $i<=5; $i++)
-                @if ($i == $item->count)
-                 <option value="{{ $i }}" selected>{{ $i }}</option>
-                @else
-                 <option value="{{ $i }}">{{ $i }}</option>
-                @endif
-              @endfor
-            </select>
+            <form action="" method="post">
+              {{ csrf_field() }}
+              <input type="hidden" name="_method" value="put">
+              <input type="hidden" name="item_id" value="{{ $item->id }}">
+              <select name="unit" id="">
+                @for ($i=1; $i<=5; $i++)
+                  @if ($i == $item->count)
+                  <option value="{{ $i }}" selected>{{ $i }}</option>
+                  @else
+                  <option value="{{ $i }}">{{ $i }}</option>
+                  @endif
+                @endfor
+              </select>
+            </form>
           </label>
         </td>
         <td class="price">

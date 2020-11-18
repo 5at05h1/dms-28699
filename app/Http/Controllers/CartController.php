@@ -47,4 +47,17 @@ class CartController extends Controller
 
     return redirect('/cart');
   }
+
+  public function update(Request $request) {
+    if (Auth::check()) {
+        //カートのアイテムを変更
+        $cart = new Cart;
+        $cart->where('user_id', Auth::id())
+          ->where('item_id', $request->input('item_id'))
+          ->update(['count' => $request->input('unit')]);
+        return redirect('/cart');
+    } else {
+        return redirect('/login');
+    }
+  }
 }

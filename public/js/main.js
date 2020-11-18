@@ -294,4 +294,9 @@ $('#sp_menu .sp_menu_icon').on('click', function(){
 	$('.common_menu').slideToggle();
 })
 
+//個数を変更する
+$('select[name=unit]').on('change', function() {
+  $(this).parents('form').submit();
+});
+
 });
