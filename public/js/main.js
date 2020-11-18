@@ -206,10 +206,10 @@ $(document).ready(function(){
  ================= */
 
   $('.cartTableModule .removeButton').on('click', function(e){
-    e.preventDefault();
+    //e.preventDefault();
 
     // 行を消す
-    $(this).parent().parent().remove();
+    //$(this).parent().parent().remove();
 
     // 金額を計算し直す
     culTotalPrice();
@@ -293,5 +293,10 @@ $('select[name=size]').on('change', function(){
 $('#sp_menu .sp_menu_icon').on('click', function(){
 	$('.common_menu').slideToggle();
 })
+
+//個数を変更する
+$('select[name=unit]').on('change', function() {
+  $(this).parents('form').submit();
+});
 
 });

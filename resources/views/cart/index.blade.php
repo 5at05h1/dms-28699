@@ -45,21 +45,32 @@
         </td>
         <td class="unit">
           <label>
-            <select name="unit" id="">
-              @for ($i=1; $i<=5; $i++)
-                @if ($i == $item->count)
-                 <option value="{{ $i }}" selected>{{ $i }}</option>
-                @else
-                 <option value="{{ $i }}">{{ $i }}</option>
-                @endif
-              @endfor
-            </select>
+            <form action="" method="post">
+              {{ csrf_field() }}
+              <input type="hidden" name="_method" value="put">
+              <input type="hidden" name="item_id" value="{{ $item->id }}">
+              <select name="unit" id="">
+                @for ($i=1; $i<=5; $i++)
+                  @if ($i == $item->count)
+                  <option value="{{ $i }}" selected>{{ $i }}</option>
+                  @else
+                  <option value="{{ $i }}">{{ $i }}</option>
+                  @endif
+                @endfor
+              </select>
+            </form>
           </label>
         </td>
         <td class="price">
-          <span>{{ number_format($item->price) }}</span>円
+          <span>{{ number_format($item->price * $item->count) }}</span>円
         </td>
-        <td class="action"><a href="#" class="removeButton button blue ghost small">削除</a></td>
+        <td class="action">
+          <form action="" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="item_id" value="{{ $item->id }}">
+          <button type="submit" class="removeButton button blue ghost small">削除</button>
+        </td>
       </tr>
       @endforeach
     </table>
@@ -70,7 +81,7 @@
   <section class="totalPriceModule section">
     <dl>
       <dt>ご注文価格合計</dt>
-      <dd><span id="totalPrice">2760</span>円</dd>
+      <dd><span id="totalPrice">{{ number_format($sum) }}</span>円</dd>
     </dl>
   </section>
 

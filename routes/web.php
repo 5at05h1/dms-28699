@@ -21,3 +21,5 @@ Route::post('/item/{id}', 'App\Http\Controllers\CartController@add');
 Auth::routes();
 
 Route::get('/cart', 'App\Http\Controllers\CartController@index');
+Route::delete('/cart', 'App\Http\Controllers\CartController@delete');
+Route::put('/cart', 'App\Http\Controllers\CartController@update');
