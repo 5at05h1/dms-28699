@@ -59,7 +59,13 @@
         <td class="price">
           <span>{{ number_format($item->price) }}</span>円
         </td>
-        <td class="action"><a href="#" class="removeButton button blue ghost small">削除</a></td>
+        <td class="action">
+          <form action="" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="item_id" value="{{ $item->id }}">
+          <button type="submit" class="removeButton button blue ghost small">削除</button>
+        </td>
       </tr>
       @endforeach
     </table>

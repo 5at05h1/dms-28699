@@ -206,10 +206,10 @@ $(document).ready(function(){
  ================= */
 
   $('.cartTableModule .removeButton').on('click', function(e){
-    e.preventDefault();
+    //e.preventDefault();
 
     // 行を消す
-    $(this).parent().parent().remove();
+    //$(this).parent().parent().remove();
 
     // 金額を計算し直す
     culTotalPrice();

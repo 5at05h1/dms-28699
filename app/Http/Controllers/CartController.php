@@ -29,4 +29,15 @@ class CartController extends Controller
           return redirect('/login');
       }
   }
+
+  function delete(Request $request) {
+    if (Auth::check()) {
+        $cart = new Cart;
+        $cart->where('user_id', Auth::id())
+          ->where('item_id', $request->input('item_id'))
+          ->delete();
+    }
+
+    return redirect('/cart');
+  }
 }
