@@ -29,7 +29,7 @@
         </div>
         <div class="name"><a href="detail_1.html">{{ $item->name }}</a></div>
         <div class="price">{{ number_format($item->price) }}</div>
-        <div class="favorite"><a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
+        <div class="favorite"><a href="/item/favorite/{{ $item->id }}" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
       </div>
     @endforeach
   </div>

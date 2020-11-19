@@ -26,7 +26,7 @@
         <img src="{{ $item->picture01 }}" alt="">
       </div>
       <div class="favorite">
-        <a href="#" class="favorite_btn"><i class="fa fa-heart"></i></a>
+        <a href="/item/favorite/{{ $item->id }}" class="favorite_btn"><i class="fa fa-heart"></i></a>
       </div>
     </div>
     <div class="imageSelect" id="imageSelect">
