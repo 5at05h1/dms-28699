@@ -12,8 +12,18 @@ class ItemController extends Controller
     public function index() {
         $items = Item::orderBy('id', 'desc')->get();
 
+        if (Auth::check()) {
+            $favs = Favorite::where('user_id', Auth::id())->get();
+
+            $fav_items = array();
+            foreach ($favs as $fav) {
+                $fav_items[] = $fav->item_id;
+            }
+        }
+
         return view('index', [
-            'items' => $items
+            'items' => $items,
+            'fav_items' => $fav_items
         ]);
     }
 

@@ -29,7 +29,9 @@
         </div>
         <div class="name"><a href="detail_1.html">{{ $item->name }}</a></div>
         <div class="price">{{ number_format($item->price) }}</div>
-        <div class="favorite"><a href="/item/favorite/{{ $item->id }}" class="favorite_btn"><i class="fa fa-heart"></i></a></div>
+        <div class="favorite">
+          <?php $class = (array_search($item->id,$fav_items) !==false ? ' select' : ''); ?>
+        <a href="/item/favorite/{{ $item->id }}" class="favorite_btn{{ $class }}"><i class="fa fa-heart"></i></a></div>
       </div>
     @endforeach
   </div>
