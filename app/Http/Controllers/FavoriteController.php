@@ -11,13 +11,19 @@ class FavoriteController extends Controller
     public function add($item_id) {
       if (Auth::check()) {
         $favorite = new Favorite;
-        $favorite->user_id = Auth::id();
-        $favorite->item_id = $item_id;
-        $favorite->save();
+        $already = $favorite->where('user_id', Auth::id())->where('item_id', $item_id)->first();
+
+        if ($already) {
+          $already->delete();
+        } else {
+          $favorite->user_id = Auth::id();
+          $favorite->item_id = $item_id;
+          $favorite->save();
+        }
 
         return redirect('/item/' . $item_id);
       } else {
-        return redirect('login');
+        return redirect('/login');
       }
     }
 }
