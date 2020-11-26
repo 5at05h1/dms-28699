@@ -59,21 +59,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-アプリ名：dms
-概要：・会員登録、ログイン
-     ・購入したい商品の詳細表示
-     ・購入したい商品をカートに入れたり削除できる
-     ・カート内の表示
-     ・気になる商品をお気に入り登録したりお気に入りを外したりできる
-本番環境：local
-テスト用アカウント：xxx@tech.com
-テスト用パスワード：22222222
-製作背景：テックキャンプではRuby on Railsを使ってフリマアプリを実装したが、追加でPHPを学習し、Laravelを使ってカート内に入れるだけの機能ではあるが、ショッピングサイトを実装した。
-DEMO：https://gyazo.com/65262c8deada7a5027c5781d644ed96a
-     https://gyazo.com/9f3d786d959703e2b0212b450ef2843c
-     https://gyazo.com/5fa9f0e711ffdc3d98967d5b214e1c3c
-工夫したポイント：フロントエンドとバックエンドでコーディングの仕事が分けれるように、できるだけHTMLのビューファイルにPHPの処理の記述を書かないように気をつけた。
-（bladeテンプレートを積極的に使用した。）
-開発環境：Laravel,VScode,mysql,CLI,GoogleChrome,GitHub
-今後実装したい機能：購入機能
