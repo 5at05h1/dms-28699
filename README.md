@@ -77,4 +77,3 @@ DEMO：https://gyazo.com/65262c8deada7a5027c5781d644ed96a
 　　　　　　　　（bladeテンプレートを積極的に使用した。）
 開発環境：Laravel,VScode,mysql,CLI,GoogleChrome,GitHub
 今後実装したい機能：購入機能
-DB設計：
