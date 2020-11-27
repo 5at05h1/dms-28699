@@ -109,3 +109,7 @@ Laravel,VScode,mysql,CLI,GoogleChrome,GitHub
 ## 今後実装したい機能
 
 購入機能
+
+## DB設計
+
+https://gyazo.com/c7de462504fc69dbc50772fb8d02c6b6
