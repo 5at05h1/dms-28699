@@ -38,6 +38,9 @@
             <form action="/login" method="get">
               <button type="submit">LOGIN</button>
             </form>
+            <form action="/register" method="get">
+              <button type="submit">会員登録</button>
+            </form>
           @endif
         </li>
       </ul>
