@@ -35,11 +35,11 @@
               <button type="submit">LOGOUT</button>
             </form>
           @else
-            <form action="/login" method="get">
-              <button type="submit">LOGIN</button>
-            </form>
             <form action="/register" method="get">
               <button type="submit">会員登録</button>
+            </form>
+            <form action="/login" method="get">
+              <button type="submit">LOGIN</button>
             </form>
           @endif
         </li>
