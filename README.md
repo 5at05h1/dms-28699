@@ -24,7 +24,7 @@ dms online
 
 ## 本番環境
 
-local
+https://dms-28699.herokuapp.com/
 
 ## テスト用アカウント
 
